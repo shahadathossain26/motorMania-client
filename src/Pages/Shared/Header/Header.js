@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo (2).png';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.error(err))
+    }
     const menuItems = <>
         <li><Link to='/' className='font-bold text-black lg:ml-5 md:ml-3 hover:text-[#E52727] focus:text-white focus:rounded-xl focus:bg-[#E52727]'>Home</Link></li>
         <li><Link to='/dashboard' className='font-bold text-black lg:ml-5 md:ml-3 hover:text-[#E52727] focus:text-white focus:rounded-xl focus:bg-[#E52727]'>Dashboard</Link></li>
         <li><Link to='/blog' className='font-bold text-black lg:ml-5 md:ml-3 hover:text-[#E52727] focus:text-white focus:rounded-xl focus:bg-[#E52727]'>Blog</Link></li>
-        <li><Link to='/login' className='font-bold text-black lg:ml-5 md:ml-3 hover:text-[#E52727] focus:text-white focus:rounded-xl focus:bg-[#E52727]'>Login</Link></li>
+        {
+            user?.email ? <li><button onClick={handleLogout} className='font-bold text-black lg:ml-5 md:ml-3 hover:text-[#E52727] focus:text-white focus:rounded-xl focus:bg-[#E52727]'>Logout</button></li>
+                :
+                <li><Link to='/login' className='font-bold text-black lg:ml-5 md:ml-3 hover:text-[#E52727] focus:text-white focus:rounded-xl focus:bg-[#E52727]'>Login</Link></li>
+        }
     </>
     return (
         <div className="navbar lg:px-10">
