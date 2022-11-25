@@ -7,7 +7,8 @@ module.exports = {
     themes: [
       {
         motortheme: {
-          primary: "#E52727"
+          primary: "#E52727",
+          neutral: "#3D4451"
         }
       }
     ]

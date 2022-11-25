@@ -1,0 +1,83 @@
+[
+    {
+        "name": "Suzuki TU",
+        "image": "https://i.ibb.co/QFqYHqW/Suzuki-tu.jpg",
+        "location": "Dhaka",
+        "resale_price": "70,000",
+        "original_price": "1,50,000",
+        "years_of_use": 2,
+        "category_id": "63809ebb57bfdf11ee0e270c"
+    },
+    {
+        "name": "Bajaj pulsar 180F Neon",
+        "image": "https://i.ibb.co/6FkyT5C/Bajaj-Pulsar-180-F-Neon.jpg",
+        "location": "Chittagong",
+        "resale_price": "80,000",
+        "original_price": "1,80,000",
+        "years_of_use": 2,
+        "category_id": "63809ebb57bfdf11ee0e270d"
+    },
+    {
+        "name": "TVS Ronin",
+        "image": "https://i.ibb.co/ZS2C6zn/Tvs-ronin.webp",
+        "location": "Mymensingh",
+        "resale_price": "90,000",
+        "original_price": "1,90,000",
+        "years_of_use": 1,
+        "category_id": "63809ebb57bfdf11ee0e270b"
+    },
+    {
+        "name": "Suzuki Bandit",
+        "image": "https://i.ibb.co/fQFqtfm/Suzuki-bandit.webp",
+        "location": "Rajshahi",
+        "resale_price": "50,000",
+        "original_price": "1,30,000",
+        "years_of_use": 3,
+        "category_id": "63809ebb57bfdf11ee0e270c"
+    },
+    {
+        "name": "Suzuki GSX",
+        "image": "https://i.ibb.co/9v2qYxZ/Suzuki-gsx-s.webp",
+        "location": "Comilla",
+        "resale_price": "80,000",
+        "original_price": "1,60,000",
+        "years_of_use": 2,
+        "category_id": "63809ebb57bfdf11ee0e270c"
+    },
+    {
+        "name": "Bajaj pulsar NS",
+        "image": "https://i.ibb.co/NnFT8XR/Bajaj-pulsar-ns-160.webp",
+        "location": "Dhaka",
+        "resale_price": "75,000",
+        "original_price": "1,50,000",
+        "years_of_use": 1,
+        "category_id": "63809ebb57bfdf11ee0e270d"
+    },
+    {
+        "name": "Bajaj pulsar",
+        "image": "https://i.ibb.co/RCmfkHQ/Bajaj-pulser.webp",
+        "location": "Khulna",
+        "resale_price": "82,000",
+        "original_price": "1,70,000",
+        "years_of_use": 2,
+        "category_id": "63809ebb57bfdf11ee0e270d"
+    },
+    {
+        "name": "TVS Raider",
+        "image": "https://i.ibb.co/sgmKvqf/Tvs-raider.webp",
+        "location": "Rangpur",
+        "resale_price": "70,000",
+        "original_price": "1,50,000",
+        "years_of_use": 3,
+        "category_id": "63809ebb57bfdf11ee0e270b"
+    },
+    {
+        "name": "TVS Apache",
+        "image": "https://i.ibb.co/HVS1xGp/Tvs-apache.webp",
+        "location": "Mymensingh",
+        "resale_price": "94,000",
+        "original_price": "1,87,000",
+        "years_of_use": 3,
+        "category_id": "63809ebb57bfdf11ee0e270b"
+    }
+]
