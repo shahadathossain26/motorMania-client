@@ -1,12 +1,14 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import background from '../../assets/products.jpg';
+import BookingModal from './BookingModal/BookingModal';
 import ProductCard from './ProductCard';
 
 const Products = () => {
     // const { name, image, location, resale_price, original_price, years_of_use, publish_date, seller_name } = useLoaderData();
     const products = useLoaderData();
+    const [bookingProduct, setBookingProduct] = useState({});
 
     return (
         <section className='mt-5 mb-16'>
@@ -23,9 +25,13 @@ const Products = () => {
                     products.map(product => <ProductCard
                         key={product._id}
                         product={product}
+                        setBookingProduct={setBookingProduct}
                     ></ProductCard>)
                 }
             </div>
+            <BookingModal
+                bookingProduct={bookingProduct}
+            ></BookingModal>
         </section>
 
     );
