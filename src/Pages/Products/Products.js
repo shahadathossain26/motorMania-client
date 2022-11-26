@@ -8,7 +8,7 @@ import ProductCard from './ProductCard';
 const Products = () => {
     // const { name, image, location, resale_price, original_price, years_of_use, publish_date, seller_name } = useLoaderData();
     const products = useLoaderData();
-    const [bookingProduct, setBookingProduct] = useState({});
+    const [bookingProduct, setBookingProduct] = useState(null);
 
     return (
         <section className='mt-5 mb-16'>
@@ -29,9 +29,13 @@ const Products = () => {
                     ></ProductCard>)
                 }
             </div>
-            <BookingModal
-                bookingProduct={bookingProduct}
-            ></BookingModal>
+            {
+                bookingProduct &&
+                <BookingModal
+                    bookingProduct={bookingProduct}
+                    setBookingProduct={setBookingProduct}
+                ></BookingModal>
+            }
         </section>
 
     );
