@@ -37,9 +37,9 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user?.email ? <li><button onClick={handleLogout} className='btn btn-primary font-bold text-white lg:ml-5 md:ml-3'>Logout</button></li>
+                    user?.email ? <button onClick={handleLogout} className='btn btn-primary font-bold text-white lg:ml-5 md:ml-3'>Logout</button>
                         :
-                        <li><Link to='/login' className=' btn btn-primary font-bold  text-white lg:ml-5 md:ml-3'>Login</Link></li>
+                        <Link to='/login' className=' btn btn-primary font-bold  text-white lg:ml-5 md:ml-3'>Login</Link>
                 }
             </div>
         </div>
