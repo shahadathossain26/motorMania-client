@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import registerImage from '../../assets/register.jpg'
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast'
@@ -8,6 +8,7 @@ const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [registerError, setRegisterError] = useState('');
     const { createUser, updateUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
 
     const handleRegister = data => {
@@ -18,11 +19,14 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('User Created Succesfully')
+
                 const userInfo = {
-                    displayName: data.name
+                    displayName: data.name,
                 }
                 updateUser(userInfo)
-                    .then(() => { })
+                    .then(() => {
+                        saveUser(data.name, data.email, data.account_type)
+                    })
                     .catch(err => console.error(err))
             })
             .catch(err => {
@@ -30,6 +34,21 @@ const Register = () => {
                 setRegisterError(err.message);
             })
 
+    }
+    const saveUser = (name, email, account_type) => {
+        const user = { name, email, account_type };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json)
+            .then(data => {
+                console.log(data);
+                navigate('/');
+            })
     }
     return (
         <section className='my-28 block lg:flex justify-around'>
@@ -64,7 +83,7 @@ const Register = () => {
                     <div>
                         <label className="label"><span className="label-text text-black">Select Account Type</span>
                         </label>
-                        <select {...register("account-type")} className="select select-bordered w-full max-w-xs border-slate-400 mb-5 text-black">
+                        <select {...register("account_type")} className="select select-bordered w-full max-w-xs border-slate-400 mb-5 text-black">
                             <option selected>Buyer</option>
                             <option>Seller</option>
                         </select>

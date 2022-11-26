@@ -35,9 +35,29 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                saveUser(user?.displayName, user?.email)
 
             })
             .catch(error => console.error(error))
+    }
+    const saveUser = (name, email,) => {
+        const user = {
+            name,
+            email,
+            account_type: "Buyer"
+        };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json)
+            .then(data => {
+                console.log(data);
+                navigate('/');
+            })
     }
     return (
         <section className='my-28 block lg:flex justify-around'>
