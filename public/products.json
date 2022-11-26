@@ -5,8 +5,13 @@
         "location": "Dhaka",
         "resale_price": "70,000",
         "original_price": "1,50,000",
-        "years_of_use": 2,
-        "category_id": "63809ebb57bfdf11ee0e270c"
+        "years_of_use": "2",
+        "year_of_perchase": "2020",
+        "condition": "good",
+        "product_category": "Suzuki",
+        "category_id": "63809ebb57bfdf11ee0e270c",
+        "seller_name": "Shahadat Hossain",
+        "publish_date": "14 November, 2022"
     },
     {
         "name": "Bajaj pulsar 180F Neon",
@@ -14,8 +19,13 @@
         "location": "Chittagong",
         "resale_price": "80,000",
         "original_price": "1,80,000",
-        "years_of_use": 2,
-        "category_id": "63809ebb57bfdf11ee0e270d"
+        "years_of_use": "2",
+        "year_of_perchase": "2019",
+        "condition": "fair",
+        "product_category": "Bajaj",
+        "category_id": "63809ebb57bfdf11ee0e270d",
+        "seller_name": "Shahariar Hasan",
+        "publish_date": "19 April, 2021"
     },
     {
         "name": "TVS Ronin",
@@ -23,8 +33,13 @@
         "location": "Mymensingh",
         "resale_price": "90,000",
         "original_price": "1,90,000",
-        "years_of_use": 1,
-        "category_id": "63809ebb57bfdf11ee0e270b"
+        "years_of_use": "1",
+        "year_of_perchase": "2021",
+        "condition": "excellent",
+        "product_category": "TVS",
+        "category_id": "63809ebb57bfdf11ee0e270b",
+        "seller_name": "Sohel Mia",
+        "publish_date": "30 June, 2022"
     },
     {
         "name": "Suzuki Bandit",
@@ -32,8 +47,13 @@
         "location": "Rajshahi",
         "resale_price": "50,000",
         "original_price": "1,30,000",
-        "years_of_use": 3,
-        "category_id": "63809ebb57bfdf11ee0e270c"
+        "years_of_use": "3",
+        "year_of_perchase": "2019",
+        "condition": "good",
+        "product_category": "Suzuki",
+        "category_id": "63809ebb57bfdf11ee0e270c",
+        "seller_name": "Shahariar Hasan",
+        "publish_date": "30 May, 2022"
     },
     {
         "name": "Suzuki GSX",
@@ -41,8 +61,13 @@
         "location": "Comilla",
         "resale_price": "80,000",
         "original_price": "1,60,000",
-        "years_of_use": 2,
-        "category_id": "63809ebb57bfdf11ee0e270c"
+        "years_of_use": "2",
+        "year_of_perchase": "2020",
+        "condition": "good",
+        "product_category": "Suzuki",
+        "category_id": "63809ebb57bfdf11ee0e270c",
+        "seller_name": "Shahadat Hossain",
+        "publish_date": "27 May, 2022"
     },
     {
         "name": "Bajaj pulsar NS",
@@ -50,8 +75,13 @@
         "location": "Dhaka",
         "resale_price": "75,000",
         "original_price": "1,50,000",
-        "years_of_use": 1,
-        "category_id": "63809ebb57bfdf11ee0e270d"
+        "years_of_use": "1",
+        "year_of_perchase": "2021",
+        "condition": "excellent",
+        "product_category": "Bajaj",
+        "category_id": "63809ebb57bfdf11ee0e270d",
+        "seller_name": "Shahadat Hossain",
+        "publish_date": "02 May, 2022"
     },
     {
         "name": "Bajaj pulsar",
@@ -59,8 +89,13 @@
         "location": "Khulna",
         "resale_price": "82,000",
         "original_price": "1,70,000",
-        "years_of_use": 2,
-        "category_id": "63809ebb57bfdf11ee0e270d"
+        "years_of_use": "2",
+        "year_of_perchase": "2020",
+        "condition": "excellent",
+        "product_category": "Bajaj",
+        "category_id": "63809ebb57bfdf11ee0e270d",
+        "seller_name": "Sohel Mia",
+        "publish_date": "02 May, 2022"
     },
     {
         "name": "TVS Raider",
@@ -68,8 +103,13 @@
         "location": "Rangpur",
         "resale_price": "70,000",
         "original_price": "1,50,000",
-        "years_of_use": 3,
-        "category_id": "63809ebb57bfdf11ee0e270b"
+        "years_of_use": "3",
+        "year_of_perchase": "2019",
+        "condition": "fair",
+        "product_category": "TVS",
+        "category_id": "63809ebb57bfdf11ee0e270b",
+        "seller_name": "Jwel Ahmed",
+        "publish_date": "02 September, 2022"
     },
     {
         "name": "TVS Apache",
@@ -77,7 +117,12 @@
         "location": "Mymensingh",
         "resale_price": "94,000",
         "original_price": "1,87,000",
-        "years_of_use": 3,
-        "category_id": "63809ebb57bfdf11ee0e270b"
+        "years_of_use": "3",
+        "year_of_perchase": "2019",
+        "condition": "good",
+        "product_category": "TVS",
+        "category_id": "63809ebb57bfdf11ee0e270b",
+        "seller_name": "Shahariar Hasan",
+        "publish_date": "09 September, 2022"
     }
 ]

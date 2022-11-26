@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import loginImage from '../../assets/login.jpg';
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 
@@ -9,6 +9,10 @@ const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { logIn, googleLogin } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location?.state?.from?.pathname || '/'
     const googleProvider = new GoogleAuthProvider();
 
     const handleLogin = data => {
@@ -18,7 +22,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-
+                navigate(from, { replace: true })
             })
             .catch(err => {
                 console.log(err.message);
@@ -71,7 +75,7 @@ const Login = () => {
                     </div>
                     <p className='text-black'>New to Doctors Portal? <span className='text-primary'><Link to='/register'>Create new account</Link></span></p>
                     <div className="divider mb-[25px] text-black">OR</div>
-                    <button onClick={handleGoogleLogin} className="btn btn-outline btn-primary w-full text-white">Continue With Goole</button>
+                    <button onClick={handleGoogleLogin} className="btn btn-outline btn-primary w-full text-white">Continue With Google</button>
                 </form>
             </div>
         </section>
