@@ -4,12 +4,18 @@ import { Link, useNavigate } from 'react-router-dom';
 import registerImage from '../../assets/register.jpg'
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast'
+import useToken from '../../Hooks/useToken';
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [registerError, setRegisterError] = useState('');
     const { createUser, updateUser } = useContext(AuthContext);
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
+    const [token] = useToken(createdUserEmail)
     const navigate = useNavigate();
 
+    if (token) {
+        navigate('/');
+    }
 
     const handleRegister = data => {
         console.log(data);
@@ -46,19 +52,10 @@ const Register = () => {
         })
             .then(res => res.json)
             .then(data => {
-                getUserToken(email);
+                setCreatedUserEmail(email)
             })
     }
-    const getUserToken = email => {
-        fetch(`http://localhost:5000/jwt?email=${email}`)
-            .then(res => res.json())
-            .then(data => {
-                if (data.accessToken) {
-                    localStorage.setItem('accessToken', data.accessToken);
-                    navigate('/');
-                }
-            })
-    }
+
     return (
         <section className='my-28 block lg:flex justify-around'>
             <div className='md:w-full lg:w-1/2 mb-16 lg:mb-0'>
