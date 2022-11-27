@@ -1,8 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const AllSellers = () => {
-    const { data: sellers = [] } = useQuery({
+    const { data: sellers = [], refetch } = useQuery({
         queryKey: ['Sellers'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/sellers')
@@ -11,6 +12,22 @@ const AllSellers = () => {
         }
     })
     console.log(sellers);
+
+    const handleVerify = id => {
+        fetch(`http://localhost:5000/users/verify/${id}`, {
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success("Seller Varified");
+                    refetch();
+                }
+            })
+    }
 
     return (
         <section>
@@ -37,7 +54,9 @@ const AllSellers = () => {
                                 <td>{seller.name}</td>
                                 <td>{seller.email}</td>
                                 <td>{seller.account_type}</td>
-                                <td><button className="btn btn-accent text-white">Verify</button></td>
+                                <td>{seller?.status !== 'verified' ? <button onClick={() => handleVerify(seller._id)} className="btn btn-accent text-white">Verify</button>
+                                    :
+                                    <p className='text-accent'>Verified</p>}</td>
                                 <td><button className="btn btn-primary text-white">Delete</button></td>
                             </tr>)
                         }
