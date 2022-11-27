@@ -3,7 +3,7 @@ import React from 'react';
 import toast from 'react-hot-toast';
 
 const AllSellers = () => {
-    const { data: sellers = [], refetch } = useQuery({
+    let { data: sellers = [], refetch } = useQuery({
         queryKey: ['Sellers'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/sellers')
@@ -28,6 +28,26 @@ const AllSellers = () => {
                 }
             })
     }
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure you want to delete this review?');
+        if (proceed) {
+            fetch(`http://localhost:5000/users/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        const remaining = sellers.filter(seller => seller._id !== id);
+                        sellers = remaining
+                        toast.success("Deleted Succesfully");
+                        refetch();
+                    }
+                })
+        }
+    }
+
 
     return (
         <section>
@@ -57,7 +77,7 @@ const AllSellers = () => {
                                 <td>{seller?.status !== 'verified' ? <button onClick={() => handleVerify(seller._id)} className="btn btn-accent text-white">Verify</button>
                                     :
                                     <p className='text-accent'>Verified</p>}</td>
-                                <td><button className="btn btn-primary text-white">Delete</button></td>
+                                <td><button onClick={() => handleDelete(seller._id)} className="btn btn-primary text-white">Delete</button></td>
                             </tr>)
                         }
 
