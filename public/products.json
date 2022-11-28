@@ -11,7 +11,9 @@
         "product_category": "Suzuki",
         "category_id": "63809ebb57bfdf11ee0e270c",
         "seller_name": "Shahadat Hossain",
-        "publish_date": "14 November, 2022"
+        "publish_date": "14 November, 2022",
+        "status": "available",
+        "advertise": "false"
     },
     {
         "name": "Bajaj pulsar 180F Neon",
@@ -25,7 +27,9 @@
         "product_category": "Bajaj",
         "category_id": "63809ebb57bfdf11ee0e270d",
         "seller_name": "Shahariar Hasan",
-        "publish_date": "19 April, 2021"
+        "publish_date": "19 April, 2021",
+        "status": "available",
+        "advertise": "false"
     },
     {
         "name": "TVS Ronin",
@@ -39,7 +43,9 @@
         "product_category": "TVS",
         "category_id": "63809ebb57bfdf11ee0e270b",
         "seller_name": "Sohel Mia",
-        "publish_date": "30 June, 2022"
+        "publish_date": "30 June, 2022",
+        "status": "available",
+        "advertise": "false"
     },
     {
         "name": "Suzuki Bandit",
@@ -53,7 +59,9 @@
         "product_category": "Suzuki",
         "category_id": "63809ebb57bfdf11ee0e270c",
         "seller_name": "Shahariar Hasan",
-        "publish_date": "30 May, 2022"
+        "publish_date": "30 May, 2022",
+        "status": "available",
+        "advertise": "false"
     },
     {
         "name": "Suzuki GSX",
@@ -67,7 +75,9 @@
         "product_category": "Suzuki",
         "category_id": "63809ebb57bfdf11ee0e270c",
         "seller_name": "Shahadat Hossain",
-        "publish_date": "27 May, 2022"
+        "publish_date": "27 May, 2022",
+        "status": "available",
+        "advertise": "false"
     },
     {
         "name": "Bajaj pulsar NS",
@@ -81,7 +91,9 @@
         "product_category": "Bajaj",
         "category_id": "63809ebb57bfdf11ee0e270d",
         "seller_name": "Shahadat Hossain",
-        "publish_date": "02 May, 2022"
+        "publish_date": "02 May, 2022",
+        "status": "available",
+        "advertise": "false"
     },
     {
         "name": "Bajaj pulsar",
@@ -95,7 +107,9 @@
         "product_category": "Bajaj",
         "category_id": "63809ebb57bfdf11ee0e270d",
         "seller_name": "Sohel Mia",
-        "publish_date": "02 May, 2022"
+        "publish_date": "02 May, 2022",
+        "status": "available",
+        "advertise": "false"
     },
     {
         "name": "TVS Raider",
@@ -109,7 +123,9 @@
         "product_category": "TVS",
         "category_id": "63809ebb57bfdf11ee0e270b",
         "seller_name": "Jwel Ahmed",
-        "publish_date": "02 September, 2022"
+        "publish_date": "02 September, 2022",
+        "status": "available",
+        "advertise": "false"
     },
     {
         "name": "TVS Apache",
@@ -123,6 +139,8 @@
         "product_category": "TVS",
         "category_id": "63809ebb57bfdf11ee0e270b",
         "seller_name": "Shahariar Hasan",
-        "publish_date": "09 September, 2022"
+        "publish_date": "09 September, 2022",
+        "status": "available",
+        "advertise": "false"
     }
 ]
