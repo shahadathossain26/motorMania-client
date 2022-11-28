@@ -51,7 +51,7 @@ const AllSellers = () => {
 
     return (
         <section>
-            <h2 className='text-2xl md:text-3xl lg:text-4xl text-primary font-bold mt-12 mb-5 ml-5'>All Buyers</h2>
+            <h2 className='text-2xl md:text-3xl lg:text-4xl text-primary font-bold mt-12 mb-5 ml-5'>All Sellers</h2>
 
             <div className="overflow-x-auto">
                 <table className="table w-full">
