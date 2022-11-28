@@ -9,7 +9,7 @@ const ProductCard = ({ product, setBookingProduct }) => {
 
 
     const handleReport = id => {
-        fetch(`http://localhost:5000/products/report/${id}`, {
+        fetch(`https://motor-mania-server.vercel.app/products/report/${id}`, {
             method: 'PUT',
         })
             .then(res => res.json())

@@ -6,7 +6,7 @@ import article3 from '../../../assets/article2.jpg';
 
 const Articles = () => {
     return (
-        <section>
+        <section className=''>
             <h2 className="mb-10 ml-10 text-2xl md:text-3xl lg:text-4xl text-black text-left font-bold">Latest Articles</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-5'>
                 <div className="card card-compact  bg-base-100 shadow-xl mb-5">

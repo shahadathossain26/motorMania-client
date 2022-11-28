@@ -43,7 +43,7 @@ const Register = () => {
     }
     const saveUser = (name, email, account_type) => {
         const user = { name, email, account_type };
-        fetch('http://localhost:5000/users', {
+        fetch('https://motor-mania-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -14,7 +14,7 @@ const AddProduct = () => {
 
     useEffect(() => {
         if (user.email) {
-            fetch(`http://localhost:5000/user/${user.email}`)
+            fetch(`https://motor-mania-server.vercel.app/user/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
@@ -38,16 +38,6 @@ const AddProduct = () => {
         console.log(data);
         const image = data.image[0];
 
-        // if (data.product_category === "TVS") {
-        //     return categoryId = "63809ebb57bfdf11ee0e270b";
-        // }
-        // if (data.product_category === "Suzuki") {
-        //     return categoryId = "63809ebb57bfdf11ee0e270c";
-        // }
-        // if (data.product_category === "Bajaj") {
-        //     return categoryId = "63809ebb57bfdf11ee0e270d"
-        // }
-        // console.log(categoryId);
         const formdata = new FormData();
         formdata.append('image', image);
         const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageBBKey}`
@@ -77,7 +67,7 @@ const AddProduct = () => {
                     console.log(product);
 
                     // save product information to the database
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://motor-mania-server.vercel.app/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

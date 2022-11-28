@@ -14,7 +14,7 @@ const DashboardLayout = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:5000/user/${user?.email}`)
+            fetch(`https://motor-mania-server.vercel.app/user/${user?.email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

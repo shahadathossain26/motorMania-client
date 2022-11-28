@@ -6,7 +6,7 @@ const ReportedProducts = () => {
     let { data: reportedProducts = [], refetch } = useQuery({
         queryKey: ['reportedProducts'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/reportedProducts')
+            const res = await fetch('https://motor-mania-server.vercel.app/reportedProducts')
             const data = await res.json();
             return data
         }
@@ -15,7 +15,7 @@ const ReportedProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete this review?');
         if (proceed) {
-            fetch(`http://localhost:5000/products/${id}`, {
+            fetch(`https://motor-mania-server.vercel.app/products/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

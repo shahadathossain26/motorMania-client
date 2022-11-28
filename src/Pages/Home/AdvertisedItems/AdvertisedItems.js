@@ -9,7 +9,7 @@ const AdvertisedItems = () => {
     const { data: advertisedItems = [] } = useQuery({
         queryKey: ['advertisedItems'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/advertisedItems')
+            const res = await fetch('https://motor-mania-server.vercel.app/advertisedItems')
             const data = await res.json();
             return data
         }
@@ -19,7 +19,7 @@ const AdvertisedItems = () => {
 
     if (advertisedItems.length !== 0) {
         return (
-            <section>
+            <section className='mt-10'>
                 <h2 className="mb-10 ml-10 text-2xl md:text-3xl lg:text-4xl text-black text-left font-bold">Advertised Items</h2>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-5 lg:mx-16 my-28'>
                     {

@@ -9,7 +9,7 @@ const AllBuyers = () => {
     let { data: buyers = [], refetch } = useQuery({
         queryKey: ['Buyers'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/buyers?email=${user.email}`, {
+            const res = await fetch(`https://motor-mania-server.vercel.app/buyers?email=${user.email}`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -23,7 +23,7 @@ const AllBuyers = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete this review?');
         if (proceed) {
-            fetch(`http://localhost:5000/users/${id}`, {
+            fetch(`https://motor-mania-server.vercel.app/users/${id}`, {
                 method: 'DELETE'
 
             })

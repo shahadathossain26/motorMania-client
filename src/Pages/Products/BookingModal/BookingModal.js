@@ -25,7 +25,7 @@ const BookingModal = ({ bookingProduct, setBookingProduct }) => {
         }
         console.log(order)
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://motor-mania-server.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
