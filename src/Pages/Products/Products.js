@@ -16,7 +16,7 @@ const Products = () => {
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content p-20">
                     <div className="max-w-md">
-                        <h1 className="mb-5 text-5xl text-white text-left font-bold">Products</h1>
+                        <h2 className="mb-5 text-5xl text-white text-left font-bold">Products</h2>
                     </div>
                 </div>
             </div>

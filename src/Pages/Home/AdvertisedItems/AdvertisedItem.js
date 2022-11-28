@@ -1,25 +1,7 @@
-
-import toast from 'react-hot-toast';
-import blueTick from '../../assets/blue-tick.png'
-
-
-const ProductCard = ({ product, setBookingProduct }) => {
-    const { _id, name, image, location, resale_price, original_price, years_of_use, publish_date, seller_name, seller_status } = product;
-
-
-
-    const handleReport = id => {
-        fetch(`http://localhost:5000/products/report/${id}`, {
-            method: 'PUT',
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    toast.success("Reported Succesfully");
-
-                }
-            })
-    }
+import React from 'react';
+import blueTick from '../../../assets/blue-tick.png'
+const AdvertisedItem = ({ advertisedItem, setBookingProduct }) => {
+    const { name, image, location, resale_price, original_price, years_of_use, publish_date, seller_name, seller_status } = advertisedItem;
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure><img className='h-[300px]' src={image} alt="Shoes" /></figure>
@@ -38,14 +20,12 @@ const ProductCard = ({ product, setBookingProduct }) => {
                 </div>
                 <p>Date: {publish_date}</p>
 
-
                 <div className="card-actions justify-end">
-                    <button onClick={() => handleReport(_id)} className='btn btn-accent text-white'>Report</button>
-                    <label onClick={() => setBookingProduct(product)} htmlFor="booking-modal" className="btn btn-primary text-white">Book Now</label>
+                    <label onClick={() => setBookingProduct(advertisedItem)} htmlFor="booking-modal" className="btn btn-primary text-white">Book Now</label>
                 </div>
             </div>
         </div>
     );
 };
 
-export default ProductCard;
+export default AdvertisedItem;

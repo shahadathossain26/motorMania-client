@@ -1,20 +1,35 @@
-import React, { useContext } from 'react';
+
+import { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import useAdmin from '../../Hooks/useAdmin';
+import Loading from '../../Pages/Shared/Loading/Loading';
 
 const AdminRoute = ({ children }) => {
-    const { user, loading } = useContext(AuthContext);
+    const { user, loading, logOut } = useContext(AuthContext);
     const [isAdmin, isAdminLoading] = useAdmin(user?.email)
+
     const location = useLocation();
 
     if (loading || isAdminLoading) {
-        return <h3 className='text-5xl text-primary'>Loading...</h3>
+        return <Loading></Loading>
     }
     if (user && isAdmin) {
         return children
     }
-    return <Navigate to='/login' state={{ from: location }} replace></Navigate>
+    return (
+        <div>
+            <Navigate to='/login' state={{ from: location }} replace></Navigate>
+            {
+                logOut()
+                    .then(() => {
+
+                    })
+                    .catch(err => console.error(err))
+
+            }
+        </div>
+    )
 };
 
 export default AdminRoute;

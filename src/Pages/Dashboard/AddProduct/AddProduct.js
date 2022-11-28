@@ -1,5 +1,5 @@
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,12 +7,24 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [currentUser, setCurrentUser] = useState(null)
     const { user } = useContext(AuthContext);
+    console.log(user)
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if (user.email) {
+            fetch(`http://localhost:5000/user/${user.email}`)
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    setCurrentUser(data)
+                })
+        }
+    }, [user.email])
+
+
     const imageBBKey = process.env.REACT_APP_imgbb_key
-
-
 
     const current = new Date();
     // By default US English uses 12hr time with AM/PM
@@ -57,6 +69,7 @@ const AddProduct = () => {
                         condition: data.condition,
                         category_id: data.product_category,
                         seller_name: user.displayName,
+                        seller_status: currentUser.status,
                         publish_date: postDate,
                         status: "available",
                         advertise: "false"

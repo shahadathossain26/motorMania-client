@@ -12,6 +12,7 @@ const Login = () => {
     const [loginError, setLoginError] = useState('');
     const [loginUserEmail, setLoginUserEmail] = useState('');
     const [token] = useToken(loginUserEmail);
+
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -63,7 +64,8 @@ const Login = () => {
             .then(res => res.json)
             .then(data => {
                 console.log(data);
-                navigate('/');
+                setLoginUserEmail(email)
+
             })
     }
     return (
